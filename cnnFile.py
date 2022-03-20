@@ -21,4 +21,4 @@ from torch.autograd import Variable
 from torch.nn import Linear, ReLU, CrossEntropyLoss, Sequential, Conv2d, MaxPool2d, Module, Softmax, BatchNorm2d, Dropout
 from torch.optim import Adam, SGD
 traindf = pd.read_csv('cnnLabels.csv', header = None,names = ["trainImgId","labels"])
-traindf.head()
+print(traindf.head())
