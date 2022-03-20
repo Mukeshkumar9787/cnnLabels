@@ -6,7 +6,7 @@ import numpy as np
 # for reading and displaying images
 from skimage.io import imread
 import matplotlib.pyplot as plt
-%matplotlib inline
+# %matplotlib inline
 
 # for creating validation set
 from sklearn.model_selection import train_test_split
