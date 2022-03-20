@@ -165,3 +165,9 @@ predictions = np.argmax(prob, axis=1)
 
 # accuracy on training set
 print("accuracy_score:",accuracy_score(train_y, predictions))
+
+# loading library
+import pickle
+# create an iterator object with write permission - model.pkl
+with open('model_pkl', 'a+') as files:
+    pickle.dump(model, files)
