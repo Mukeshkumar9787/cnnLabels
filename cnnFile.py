@@ -169,5 +169,4 @@ print("accuracy_score:",accuracy_score(train_y, predictions))
 # loading library
 import pickle
 # create an iterator object with write permission - model.pkl
-with open('model_pickle.pkl', 'a+') as files:
-    pickle.dump(model, files)
+pickle.dump(model, "model.pkl")
