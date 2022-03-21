@@ -171,3 +171,20 @@ import pickle
 # create an iterator object with write permission - model.pkl
 with open("/kaggle/working/modelForCnnPrediction.pkl","wb") as f:
   pickle.dump(model, f)
+
+def predict(img):
+    train_x = imread(img, as_gray = True)
+#     print(train_x.shape)
+    train_x = train_x.astype('float32')
+    train_x = train_x.reshape(1,1, 1080, 1920)
+    train_x  = torch.from_numpy(train_x)
+    
+    with torch.no_grad():
+        output = model(train_x.cuda())
+    softmax = torch.exp(output).cpu()
+    prob = list(softmax.numpy())
+    predictions = np.argmax(prob, axis=1)
+        
+    print(predictions)
+imgPath = "waterBottleImages/2.jpg"
+predict(imgPath)
